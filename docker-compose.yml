@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  talento-urbano-landing:
+    build: .
+    container_name: talento-urbano-landing
+    restart: always
+    expose:
+      - "80"
+    networks:
+      - cloudflare_net
+
+networks:
+  cloudflare_net:
+    external: true
