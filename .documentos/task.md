@@ -12,3 +12,4 @@
 - [x] Mejorar el archivo .gitignore del proyecto
 - [x] Crear archivos de configuración de Docker (Dockerfile, docker-compose.yml, .dockerignore)
 - [x] Documentar despliegue y guía de subdominio Cloudflare en walkthrough.md
+- [x] Documentar instalación de Evolution API en setup_evolution_api.md

@@ -28,5 +28,8 @@ dist-ssr
 .env
 .env*.local
 
+# Documentos & Planning
+.documentos/
+
 # Antigravity CLI
 .antigravitycli/
