@@ -1,3 +1,20 @@
+<script setup>
+defineProps({
+  phoneNumber: {
+    type: String,
+    required: true
+  },
+  address: {
+    type: String,
+    required: true
+  },
+  schedule: {
+    type: String,
+    required: true
+  }
+})
+</script>
+
 <template>
   <header class="hero-section">
     <div class="hero-bg" :style="{ backgroundImage: `url('/barber_hero.png')` }"></div>
@@ -28,7 +45,7 @@
       
       <div class="hero-actions">
         <a 
-          href="https://wa.me/56948991554?text=Hola%20Talento%20Urbano%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita" 
+          :href="'https://wa.me/' + phoneNumber + '?text=Hola%20Talento%20Urbano%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita'" 
           target="_blank" 
           rel="noopener noreferrer" 
           class="btn btn-whatsapp pulse-btn"
@@ -49,14 +66,14 @@
             <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
             <circle cx="12" cy="10" r="3"></circle>
           </svg>
-          <span>Lautaro 738, Los Ángeles</span>
+          <span>{{ address.split(',')[0] + ', ' + address.split(',')[1] }}</span>
         </div>
         <div class="info-item">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="info-icon">
             <circle cx="12" cy="12" r="10"></circle>
             <polyline points="12 6 12 12 16 14"></polyline>
           </svg>
-          <span>Lun - Sáb: 10:00 - 20:00</span>
+          <span>{{ schedule }}</span>
         </div>
       </div>
     </div>

@@ -1,6 +1,13 @@
 <script setup>
 import { ref } from 'vue'
 
+defineProps({
+  phoneNumber: {
+    type: String,
+    required: true
+  }
+})
+
 const services = ref([
   {
     id: 1,
@@ -95,7 +102,7 @@ const services = ref([
 
           <div class="card-action">
             <a 
-              :href="`https://wa.me/56948991554?text=Hola%20Talento%20Urbano%2C%20quiero%20agendar%20el%20servicio%3A%20${encodeURIComponent(service.name)}`" 
+              :href="`https://wa.me/${phoneNumber}?text=Hola%20Talento%20Urbano%2C%20quiero%20agendar%20el%20servicio%3A%20${encodeURIComponent(service.name)}`" 
               target="_blank" 
               rel="noopener noreferrer" 
               class="btn-card-booking"
